@@ -33,7 +33,7 @@ function useToDo() {
   const removeTodo = (id) => dispatch({ type: "removeTodo", payload: id });
   const clearCompleted = () => dispatch({ type: "removeCompletedTodos" });
 
-  return { todos, addTodo, toggleTodo, removeTodo, clearCompleted };
+  return { addTodo, toggleTodo, removeTodo, clearCompleted, todos };
 }
 
 export default useToDo;

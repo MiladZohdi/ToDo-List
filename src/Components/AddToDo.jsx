@@ -1,14 +1,11 @@
 import { useState } from "react";
 import Button from "./Button";
 import Input from "./Input";
-import uesToDo from "./useToDo";
 
 /* eslint-disable react/prop-types */
 
-function AddToDo() {
+function AddToDo({ addTodo, clearCompleted }) {
   const [text, setText] = useState("");
-
-  const { addTodo, clearCompleted } = uesToDo();
 
   function handleAddToDo(e) {
     e.preventDefault();
@@ -23,7 +20,7 @@ function AddToDo() {
   function handleRemoveCompleted(e) {
     e.preventDefault();
 
-    clearCompleted({ type: "removeCompletedTodos" });
+    clearCompleted();
   }
   return (
     <form className="grid h-10 grid-cols-[1fr_60px_70px] items-center justify-items-center gap-3 text-[16px] md:h-14 lg:h-16 xl:h-18">

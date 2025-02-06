@@ -2,7 +2,7 @@
 
 import Button from "./Button";
 import Input from "./Input";
-import useToDo from "./useToDo";
+import useToDo from "../useToDo";
 
 function ToDoItem({ item }) {
   const { toggleTodo, removeTodo } = useToDo();
