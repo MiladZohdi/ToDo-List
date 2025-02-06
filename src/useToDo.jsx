@@ -8,7 +8,12 @@ function reducer(state, action) {
     case "AddToDO":
       return [
         ...state,
-        { id: v4uuid(), text: action.payload, completed: false },
+        {
+          id: v4uuid(),
+          text: action.payload,
+          completed: false,
+          date: new Date(),
+        },
       ];
     case "todotoggle":
       return state.map((item) =>

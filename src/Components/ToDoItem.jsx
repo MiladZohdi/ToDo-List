@@ -2,10 +2,8 @@
 
 import Button from "./Button";
 import Input from "./Input";
-import useToDo from "../useToDo";
 
-function ToDoItem({ item }) {
-  const { toggleTodo, removeTodo } = useToDo();
+function ToDoItem({ item, toggleTodo, removeTodo }) {
   return (
     <>
       <div className="mt-2 grid h-6 grid-cols-[1fr_24px_24px] items-center justify-between gap-2 text-sm tracking-wide">
