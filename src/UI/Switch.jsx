@@ -8,7 +8,6 @@ const StyledLabel = styled.label`
   display: inline-block;
   width: 6rem;
   height: 3.4rem;
-  margin-left: 5rem;
 `;
 
 const StyledInput = styled.input`
