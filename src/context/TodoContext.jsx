@@ -14,7 +14,6 @@ function TodoContextProvider({ children }) {
     showOnlyPendingsDispatch,
     editDataDispatch,
     editDoneDispatch,
-    nightMode,
   } = useTodoReducer();
   return (
     <TodoContext.Provider
@@ -26,7 +25,6 @@ function TodoContextProvider({ children }) {
         showOnlyPendingsDispatch,
         editDataDispatch,
         editDoneDispatch,
-        nightMode,
       }}
     >
       {children}

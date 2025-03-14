@@ -70,8 +70,6 @@ function reducer(state, action) {
 
     case "editDone":
       return { ...state, isEditing: false, editData: {} };
-    case "nightMode":
-      return { ...state, nightMode: action.payload };
     default:
       return state;
   }
@@ -106,11 +104,6 @@ function useTodoReducer() {
     dispatch({ type: "editDone" });
   }
 
-  function nightMode() {
-    dispatch({ type: "nightMode", payload: !state.nightMode });
-    console.log(state.nightMode);
-  }
-
   return {
     state,
     initialData,
@@ -119,7 +112,6 @@ function useTodoReducer() {
     showAll,
     editDataDispatch,
     editDoneDispatch,
-    nightMode,
   };
 }
 

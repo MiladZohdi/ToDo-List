@@ -11,6 +11,9 @@ import Table from "./Table";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
+import { useTheme } from "../hooks/useTheme";
+import GlobalStyle from "../styles/globalStyle";
+import Switch from "./Switch";
 
 /* eslint react/prop-types: 0 */
 
@@ -42,6 +45,7 @@ function AppContainer() {
 
   const { initialData, showOnlyPendingsDispatch, sort, state } =
     useContext(TodoContext);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     if (data && state.status === "showOnlyPendings") {
@@ -60,23 +64,27 @@ function AppContainer() {
   }
 
   return (
-    <StyledAppContainer>
-      <HeaderContainer>
-        <TodoHeader />
-        <Form />
-        <ButtonsContainer />
-      </HeaderContainer>
-      <Table isLoading={isLoading} />
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-        toastOptions={{
-          style: {
-            fontSize: "1.6rem",
-          },
-        }}
-      />
-    </StyledAppContainer>
+    <>
+      <GlobalStyle theme={theme} />
+      <StyledAppContainer>
+        <Switch toggleTheme={toggleTheme} theme={theme} />
+        <HeaderContainer>
+          <TodoHeader />
+          <Form />
+          <ButtonsContainer />
+        </HeaderContainer>
+        <Table isLoading={isLoading} />
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              fontSize: "1.6rem",
+            },
+          }}
+        />
+      </StyledAppContainer>
+    </>
   );
 }
 
