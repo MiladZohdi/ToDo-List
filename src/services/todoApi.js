@@ -1,14 +1,35 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import supabase from "./supabase";
+import app from "./firesbaseConfig";
+
+// export async function getTodosApi() {
+//   let { data: Todo, error } = await supabase.from("Todo").select("*");
+
+//   if (error) {
+//     console.error(error);
+//     throw new Error("An error occurred while fetching todos");
+//   }
+
+//   return Todo;
+// }
 
 export async function getTodosApi() {
-  let { data: Todo, error } = await supabase.from("Todo").select("*");
-
-  if (error) {
-    console.error(error);
-    throw new Error("An error occurred while fetching todos");
+  let querySnapshot;
+  const db = getFirestore(app);
+  try {
+    querySnapshot = await getDocs(collection(db, "ToDos"));
+  } catch (error) {
+    throw new Error(error.message);
   }
 
-  return Todo;
+  const data = querySnapshot.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    };
+  });
+
+  return data;
 }
 
 export async function addTodoApi(todos) {

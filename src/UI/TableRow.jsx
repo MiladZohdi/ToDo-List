@@ -26,6 +26,7 @@ const StyledTd = styled.td`
 `;
 
 function TableRow({ todos }) {
+  console.log(todos);
   const { id: todoId, todo, date, status } = todos;
 
   const { editDataDispatch } = useContext(TodoContext);

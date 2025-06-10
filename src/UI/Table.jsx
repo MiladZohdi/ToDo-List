@@ -49,7 +49,7 @@ function Table({ isLoading }) {
           <tbody>
             {sortedValue?.length === 0 && <TableRow todos={false} />}
             {sortedValue &&
-              sortedValue.map((todo) => (
+              sortedValue?.map((todo) => (
                 <TableRow key={todo.id} todos={todo} />
               ))}
           </tbody>
