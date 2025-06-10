@@ -23,14 +23,18 @@ function reducer(state, action) {
       return {
         ...state,
         sortType: "sortLatest",
-        sortedValue: [...state.sortedValue].sort((a, b) => b.id - a.id),
+        sortedValue: [...state.sortedValue].sort((a, b) =>
+          b.created_at.localeCompare(a.created_at)
+        ),
       };
 
     case "sortOldest":
       return {
         ...state,
         sortType: "sortOldest",
-        sortedValue: [...state.sortedValue].sort((a, b) => a.id - b.id),
+        sortedValue: [...state.sortedValue].sort((a, b) =>
+          a.created_at.localeCompare(b.created_at)
+        ),
       };
 
     case "sortLatestTask":
