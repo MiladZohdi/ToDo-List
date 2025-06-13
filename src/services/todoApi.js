@@ -63,7 +63,6 @@ export async function deleteTodoApi(id) {
 }
 
 export async function updateTodoApi(editData) {
-  console.log(editData);
   const { id, ...data } = editData;
 
   try {
