@@ -9,7 +9,7 @@ A **powerful and modern** To-Do List application built with **React**, now featu
 - ✅ **Persistent Storage**: Tasks are now saved in **Firebase Firestore**, allowing users to keep their data across sessions.
 - 🎨 **New UI & Dark Mode**: Fully redesigned interface with **styled-components** and a **light/dark mode toggle**.
 - 📱 **Fully Responsive**: Optimized for mobile, tablet, and desktop screens.
-- ⚡ **State Management Upgrade**: Now using **`useReducer` + Context API** for better scalability.
+- ⚡ **State Management Upgrade**: Using **`useReducer` + Context API** for better scalability.
 - 🔄 **Optimized Data Fetching**: Uses **React Query** for smooth real-time updates with Firestore.
 - 🗑️ **Task Management**:
   - Add tasks
@@ -32,3 +32,13 @@ git clone https://github.com/your-username/todo-app.git
 cd todo-app
 npm install
 npm run dev
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repo and submit a pull request.
+
+## 📜 License
+
+This project is **open-source** and available under the MIT License.
+
